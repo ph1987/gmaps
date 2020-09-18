@@ -68,6 +68,49 @@
                 }
             })();
         });
+
+        /*
+        $.ajax({
+            url: 'http://open.mapquestapi.com/geocoding/v1/address?key=ZFV3qdfanvkfJc1yeUSAmGap25uSSi4l&location=Avenida%20Venezuela,%20110,RJ',
+            dataType: 'json',
+            success: function(data) {
+
+                var resultadosJson = "";
+        
+                $.each(data, function(key, val) {
+
+                        resultadosJson += `<tr id="${val.id}">
+                        <td>${val.id ? val.id : ''}</td>
+                        <td>${val.data ? val.data : ''}</td>
+                        <td>${val.nome ? val.nome : ''}</td>
+                        <td>${val.tipo == 'Prioritário' ? '<i style="color:#D4AC0D;" class="fa fa-star" aria-hidden="true"></i> ' : ''}
+                            ${val.tipo ? val.tipo : ''}
+                        </td>
+                        <td>
+                            <button class="btnChamar btn btn-warning" id="chamar_${val.id}" type="button" onclick="chamar('${val.id}')">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                            </button>
+
+                            <button class="btn btn-danger" id="deletar_${val.id}" type="button" onclick="confirmar('${val.id}')">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                        </tr>`;
+                        
+                });           
+
+            },
+            statusCode: {
+                
+                404: function() {
+
+                    console.log(`Erro ao tentar carregar o arquivo fila.json - ${dataformatada}`);
+                    
+                }
+
+            }
+        });
+        */
         </script>
     </head>
     <body>
